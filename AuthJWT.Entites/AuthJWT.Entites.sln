@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthJWT.Entites", "AuthJWT.Entites.csproj", "{7EF5E1F5-1DB0-47B3-AB7A-366FFA84A1C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthJWT.Entities", "AuthJWT.Entities.csproj", "{7EF5E1F5-1DB0-47B3-AB7A-366FFA84A1C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthJWT.Data", "..\AuthJWT.Data\AuthJWT.Data.csproj", "{207EFD43-6DFA-48F5-B481-E636DA20B5F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthJWT.Data", "..\AuthJWT.Data\AuthJWT.Data.csproj", "{207EFD43-6DFA-48F5-B481-E636DA20B5F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthJWT.Business", "..\AuthJWT.Business\AuthJWT.Business.csproj", "{673FE9DD-1EFB-412C-A1D2-A92B59F408F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthJWT.Business", "..\AuthJWT.Business\AuthJWT.Business.csproj", "{673FE9DD-1EFB-412C-A1D2-A92B59F408F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthJWT.Api", "..\AuthJWT.Api\AuthJWT.Api.csproj", "{8E820E53-CA1C-420B-9E33-30B5863B700A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthJWT.Api", "..\AuthJWT.Api\AuthJWT.Api.csproj", "{8E820E53-CA1C-420B-9E33-30B5863B700A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
