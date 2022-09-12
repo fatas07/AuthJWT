@@ -17,6 +17,7 @@ namespace AuthJWT.Data.Repository.User
         #endregion
 
         #region UPDATE
+        Task<IdentityResult> UpdateUser(UserEntity user);
         #endregion
 
         #region DELETE

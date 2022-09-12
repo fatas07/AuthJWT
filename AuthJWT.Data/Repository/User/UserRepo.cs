@@ -40,6 +40,10 @@ namespace AuthJWT.Data.Repository.User
         #endregion
 
         #region UPDATE
+        public async Task<IdentityResult> UpdateUser(UserEntity user)
+        {
+            return await userManager.UpdateAsync(user);
+        }
         #endregion
 
         #region DELETE

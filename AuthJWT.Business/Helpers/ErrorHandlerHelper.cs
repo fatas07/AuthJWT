@@ -11,6 +11,7 @@ namespace AuthJWT.Business.Helpers
         public static readonly ErrorHandlerModel USER_NOT_FOUND = new ErrorHandlerModel("2001", Resources.Errors._2001);
         public static readonly ErrorHandlerModel USER_EXIST = new ErrorHandlerModel("2002", Resources.Errors._2002);
         public static readonly ErrorHandlerModel UNKNOWN_REGISTER_ERROR = new ErrorHandlerModel("2003", Resources.Errors._2003);
+        public static readonly ErrorHandlerModel REFRESH_TOKEN_EXPIRED = new ErrorHandlerModel("2004", Resources.Errors._2004);
 
         // SERVER ERROR CODES
         public static readonly ErrorHandlerModel INTERNAL_SERVER_ERROR = new ErrorHandlerModel("3000", Resources.Errors._3000);

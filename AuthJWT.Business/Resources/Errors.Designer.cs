@@ -106,6 +106,15 @@ namespace AuthJWT.Business.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Refresh token expired or incorrect.
+        /// </summary>
+        internal static string _2004 {
+            get {
+                return ResourceManager.GetString("2004", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Internal server error.
         /// </summary>
         internal static string _3000 {

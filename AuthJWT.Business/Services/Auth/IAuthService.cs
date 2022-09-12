@@ -1,6 +1,7 @@
 ﻿using AuthJWT.Business.Models.Base;
 using AuthJWT.Business.Models.Login;
 using AuthJWT.Business.Models.Register;
+using AuthJWT.Business.Models.Token;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,6 @@ namespace AuthJWT.Business.Services.Auth
     {
         Task<ResponseModel> Login(LoginRequestModel loginRequestModel);
         Task<ResponseModel> Register(RegisterRequestModel registerRequestModel);
+        Task<ResponseModel> RefreshToken(RefreshTokenRequestModel refreshTokenRequestModel);
     }
 }

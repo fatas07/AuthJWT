@@ -3,6 +3,7 @@ using AuthJWT.Business.Models;
 using AuthJWT.Business.Models.Base;
 using AuthJWT.Business.Models.Login;
 using AuthJWT.Business.Models.Register;
+using AuthJWT.Business.Models.Token;
 using AuthJWT.Business.Services.Token;
 using AuthJWT.Data.Repository.User;
 using AuthJWT.Entites.Identity;
@@ -36,7 +37,9 @@ namespace AuthJWT.Business.Services.Auth
                 Token = tokenService.CreateToken(user, await userRepo.GetUserRoles(user))
             };
 
-            // TODO : Save refresh Token to DB
+            user.RefreshToken = loginResponseModel.Token.RefreshToken;
+            user.RefreshTokenEndDate = loginResponseModel.Token.Expiration.AddHours(12); // Added 12 hours to access token exp.
+            await userRepo.UpdateUser(user);
 
             return new ResponseModelOk<LoginResponseModel>() { payload = loginResponseModel };
         }
@@ -70,6 +73,37 @@ namespace AuthJWT.Business.Services.Auth
             await userRepo.AddDefaultRoleToUser(userEntity);
 
             return new ResponseModelOk();
+        }
+
+        public async Task<ResponseModel> RefreshToken(RefreshTokenRequestModel refreshTokenRequestModel)
+        {
+            var user = await userRepo.GetUserByEmail(refreshTokenRequestModel.Email);
+            if (user == null)
+            {
+                return new ResponseModelError
+                {
+                    Error = ErrorHandlerHelper.USER_NOT_FOUND
+                };
+            }
+
+            if (user.RefreshToken != refreshTokenRequestModel.RefreshToken || DateTime.UtcNow > user.RefreshTokenEndDate)
+            {
+                return new ResponseModelError
+                {
+                    Error = ErrorHandlerHelper.REFRESH_TOKEN_EXPIRED
+                };
+            }
+            var loginResponseModel = new LoginResponseModel()
+            {
+                User = mapper.Map<UserModel>(user),
+                Token = tokenService.CreateToken(user, await userRepo.GetUserRoles(user))
+            };
+
+            user.RefreshToken = loginResponseModel.Token.RefreshToken;
+            user.RefreshTokenEndDate = loginResponseModel.Token.Expiration.AddHours(12); // Added 12 hours to access token exp.
+            await userRepo.UpdateUser(user);
+
+            return new ResponseModelOk<LoginResponseModel>() { payload = loginResponseModel };
         }
     }
 }

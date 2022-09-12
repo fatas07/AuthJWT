@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AuthJWT.Entites\AuthJWT.Entites.csproj" />
+    <ProjectReference Include="..\AuthJWT.Entites\AuthJWT.Entities.csproj" />
   </ItemGroup>
 
   <ItemGroup>
