@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="ConnectionString" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">User ID =postgres;Password="pg_password";Server=localhost;Port=5432;Database=DbAuthJwt;Integrated Security=true;Pooling=true;</Value>
+      <Value Profile="(Default)">User ID =postgres;Password="12345678";Server=localhost;Port=5433;Database=DbAuthJwt;Integrated Security=true;Pooling=true;</Value>
     </Setting>
     <Setting Name="RolesAdminUserId" Type="System.String" Scope="Application">
       <Value Profile="(Default)">581d4a5c-dd43-49c0-9e1a-7960bc24de5c</Value>

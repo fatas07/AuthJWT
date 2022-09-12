@@ -1,6 +1,7 @@
 ﻿using AuthJWT.Api.Filters;
 using AuthJWT.Business.Models.Login;
 using AuthJWT.Business.Models.Register;
+using AuthJWT.Business.Models.Token;
 using AuthJWT.Business.Services.Auth;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -31,6 +32,14 @@ namespace AuthJWT.Api.Controllers
         public async Task<IActionResult> Register([FromBody] RegisterRequestModel registerRequestModel)
         {
             var response = await authService.Register(registerRequestModel);
+            return response.Success ? Ok(response) : BadRequest(response);
+        }
+
+        [ModelStateValidFilter]
+        [HttpPost("refresh-token")]
+        public async Task<IActionResult> RefreshToken([FromBody] RefreshTokenRequestModel refreshTokenRequestModel)
+        {
+            var response = await authService.RefreshToken(refreshTokenRequestModel);
             return response.Success ? Ok(response) : BadRequest(response);
         }
     }
