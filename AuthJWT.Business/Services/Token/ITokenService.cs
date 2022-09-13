@@ -1,5 +1,5 @@
 ﻿using AuthJWT.Business.Models.Token;
-using AuthJWT.Entites.Identity;
+using AuthJWT.Entities.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AuthJWT.Entites.Identity
+namespace AuthJWT.Entities.Identity
 {
     public class UserEntity : IdentityUser
     {

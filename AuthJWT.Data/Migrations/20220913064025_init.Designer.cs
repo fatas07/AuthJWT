@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace AuthJWT.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220912131619_init")]
+    [Migration("20220913064025_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,7 +24,7 @@ namespace AuthJWT.Data.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("AuthJWT.Entites.Identity.UserEntity", b =>
+            modelBuilder.Entity("AuthJWT.Entities.Identity.UserEntity", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("text");
@@ -110,7 +110,7 @@ namespace AuthJWT.Data.Migrations
                         {
                             Id = "581d4a5c-dd43-49c0-9e1a-7960bc24de5c",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c2415976-679f-4048-a0e2-522bb9a2ce09",
+                            ConcurrencyStamp = "e569108b-3af0-4f37-aba1-7744708e97ac",
                             Email = "firatatas@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Fırat",
@@ -119,9 +119,9 @@ namespace AuthJWT.Data.Migrations
                             LockoutEnabled = true,
                             NormalizedEmail = "FIRATATAS@GMAIL.COM",
                             NormalizedUserName = "FIRATATAS@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEB4oZXj4+JkmwLOp2ftFLHs5qr3f8jI2LuuYrtYIq0sW1T7ZAOk44ksurZK4WjriOA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHmn4J6p4bVjVmzcMbORl9l8t2hKjh2RoyghB/4AoTrCUiFmF0KPS7/HlWDSl37IDQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "2993f893-af17-45de-a375-5523ce2dfd89",
+                            SecurityStamp = "4c161647-191b-40e1-bcb1-dc53b3973d86",
                             Timezone = "Turkey Standard Time",
                             TwoFactorEnabled = false,
                             UserName = "firatatas@gmail.com"
@@ -157,42 +157,42 @@ namespace AuthJWT.Data.Migrations
                         new
                         {
                             Id = "915f3c44-8a59-45ae-8903-aa49a44847e4",
-                            ConcurrencyStamp = "ae88a6fd-66dc-4e2f-8e2c-511dca1aa94d",
+                            ConcurrencyStamp = "caf01188-38ea-4dc6-a91f-40cb6c8adab2",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = "760e5cdf-fc52-4557-80e2-217a323e61ce",
-                            ConcurrencyStamp = "c2405fc3-4e1b-4846-87e9-0e21882737b9",
+                            ConcurrencyStamp = "fd137a64-eaec-4572-8a9b-dfddcbf07bbc",
                             Name = "Superuser",
                             NormalizedName = "SUPERUSER"
                         },
                         new
                         {
                             Id = "80f66454-27e9-4e77-ac71-c8800861c330",
-                            ConcurrencyStamp = "dab67f3a-4518-4762-8088-869532686e38",
+                            ConcurrencyStamp = "fd67736f-f2e6-4d79-a4b4-7349716cd9f2",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
                             Id = "f4075620-9a38-48c5-8cef-a677e98dfa9e",
-                            ConcurrencyStamp = "db5419d2-f39a-46d4-b855-583357da8493",
+                            ConcurrencyStamp = "b221e177-0e99-4f08-a533-21aa7e13689b",
                             Name = "Viewer",
                             NormalizedName = "VIEWER"
                         },
                         new
                         {
                             Id = "f36854dd-aaa8-4e2d-aa88-17e9e6809ebb",
-                            ConcurrencyStamp = "4ffae83f-00fb-4a26-9fae-da64da217a5b",
+                            ConcurrencyStamp = "438581f5-6606-430b-8b55-cbacac05e1c5",
                             Name = "Guest",
                             NormalizedName = "GUEST"
                         },
                         new
                         {
                             Id = "df881f83-11a3-4f2c-9171-5cd1a51a29ee",
-                            ConcurrencyStamp = "b8de2b44-3324-4386-b89c-1a037959d215",
+                            ConcurrencyStamp = "feb1c6a3-3c0b-4e6d-8cec-588806fcc706",
                             Name = "Producer",
                             NormalizedName = "PRODUCER"
                         });
@@ -347,7 +347,7 @@ namespace AuthJWT.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("AuthJWT.Entites.Identity.UserEntity", null)
+                    b.HasOne("AuthJWT.Entities.Identity.UserEntity", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -356,7 +356,7 @@ namespace AuthJWT.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("AuthJWT.Entites.Identity.UserEntity", null)
+                    b.HasOne("AuthJWT.Entities.Identity.UserEntity", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -371,7 +371,7 @@ namespace AuthJWT.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("AuthJWT.Entites.Identity.UserEntity", null)
+                    b.HasOne("AuthJWT.Entities.Identity.UserEntity", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -380,7 +380,7 @@ namespace AuthJWT.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("AuthJWT.Entites.Identity.UserEntity", null)
+                    b.HasOne("AuthJWT.Entities.Identity.UserEntity", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)

@@ -6,7 +6,7 @@ using AuthJWT.Business.Models.Register;
 using AuthJWT.Business.Models.Token;
 using AuthJWT.Business.Services.Token;
 using AuthJWT.Data.Repository.User;
-using AuthJWT.Entites.Identity;
+using AuthJWT.Entities.Identity;
 using AutoMapper;
 
 namespace AuthJWT.Business.Services.Auth

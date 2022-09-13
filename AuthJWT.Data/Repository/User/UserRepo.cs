@@ -1,4 +1,4 @@
-﻿using AuthJWT.Entites.Identity;
+﻿using AuthJWT.Entities.Identity;
 using Microsoft.AspNetCore.Identity;
 
 namespace AuthJWT.Data.Repository.User

@@ -1,6 +1,6 @@
 ﻿using AuthJWT.Business.Models.Token;
 using AuthJWT.Data;
-using AuthJWT.Entites.Identity;
+using AuthJWT.Entities.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;

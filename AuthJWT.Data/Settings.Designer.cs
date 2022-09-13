@@ -25,8 +25,8 @@ namespace AuthJWT.Data {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("User ID =postgres;Password=\"12345678\";Server=localhost;Port=5433;Database=DbAuthJ" +
-            "wt;Integrated Security=true;Pooling=true;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("User ID =postgres;Password=\"pg_password\";Server=localhost;Port=5432;Database=DbAu" +
+            "thJwt;Integrated Security=true;Pooling=true;")]
         public string ConnectionString {
             get {
                 return ((string)(this["ConnectionString"]));
